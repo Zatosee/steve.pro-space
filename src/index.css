@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.animate-sway {
+  animation: sway 1s ease-in-out infinite;
+  transform-origin: 50px 30px;
+}
