@@ -1,25 +1,23 @@
 // file: pages/index.tsx
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import { useEffect } from 'react';
 import { projects } from '../data/projects';
 import Navbar from '../components/Navbar';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/ProjectCardView';
 import ContactSection from '../components/ContactSection';
 
-const Home: NextPage = () => {
+const Portfolio: React.FC = () => {
+  // Définir dynamiquement le titre de la page
+  useEffect(() => {
+    document.title = "Steve’s Portfolio";
+  }, []);
+
   return (
     <div className="bg-black text-gray-100 min-h-screen">
-      <Head>
-        <title>Steve’s Portfolio</title>
-        <meta name="description" content="Portfolio of Steve - Fullstack Developer" />
-      </Head>
-
       {/* Navigation */}
       <Navbar />
 
       {/* Hero / Introduction Section */}
       <section id="hero" className="pt-20 pb-16 text-center relative">
-        {/* If you implement a starry background with CSS, you might have a <div className="absolute inset-0 bg-stars"></div> here */}
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to My Space</h1>
         <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
           Hi, I’m <span className="text-white font-semibold">Steve</span>, a passionate fullstack developer. <br className="hidden sm:inline" />
@@ -50,4 +48,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Portfolio;
