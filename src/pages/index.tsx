@@ -1,48 +1,53 @@
-// file: pages/index.tsx
+// ✅ index.tsx avec fond nuageux + animations AOS
 import { useEffect } from 'react';
 import { projects } from '../data/projects';
 import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCardView';
 import ContactSection from '../components/ContactSection';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Portfolio: React.FC = () => {
-  // Définir dynamiquement le titre de la page
   useEffect(() => {
     document.title = "Steve’s Portfolio";
+    AOS.init({ once: true });
   }, []);
 
   return (
-    <div className="bg-black text-gray-100 min-h-screen">
-      {/* Navigation */}
+    <div className="clouds-bg min-h-screen bg-fixed">
       <Navbar />
 
-      {/* Hero / Introduction Section */}
-      <section id="hero" className="pt-20 pb-16 text-center relative">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to My Space</h1>
-        <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
-          Hi, I’m <span className="text-white font-semibold">Steve</span>, a passionate fullstack developer. <br className="hidden sm:inline" />
-          I love building innovative web applications and experiences.
+    <section id="hero" className="pt-32 pb-20 text-center relative">
+    <div className="bg-white/70 backdrop-blur-sm rounded-3xl max-w-2xl mx-auto p-10 shadow-xl" data-aos="fade-up">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
+        Salut, moi c’est <span className="text-sky-500">Steve.</span>
+        </h1>
+        <p className="text-gray-700 mb-6">
+        Développeur Front-End passionné <br />
+        Je crée des interfaces modernes et fluides, inspirées par la légèreté des nuages.
         </p>
-        <a href="#projects" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full">
-          ↓ Explore My Work
+        <a href="#projects"
+        className="inline-block bg-gradient-to-r from-yellow-200 to-yellow-400 text-gray-800 font-semibold px-6 py-3 rounded-full shadow hover:brightness-110">
+        Découvrir mon travail
         </a>
-      </section>
+    </div>
+    </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="pb-16 px-4">
+      <section id="projects" className="pb-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-8">Projects</h2>
+          <h2 className="text-3xl font-semibold text-gray-800 mb-8" data-aos="fade-down">Projects</h2>
           {projects.map((project, index) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              flip={index % 2 !== 0} 
-            />
+            <div data-aos="fade-up" data-aos-delay={index * 100}>
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                flip={index % 2 !== 0} 
+              />
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Contact Section */}
       <ContactSection />
     </div>
   );

@@ -16,6 +16,7 @@
     "@tsparticles/all": "^3.8.1",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
+    "aos": "^2.3.4",
     "motion": "^12.23.1",
     "next": "^15.4.3",
     "react": "^19.1.0",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@types/aos": "^3.0.7",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",

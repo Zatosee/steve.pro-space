@@ -44,6 +44,21 @@ export const projects: Project[] = [
     ],
     // No demoLink for this project (game might not be hosted), only codeLink:
     codeLink: 'https://github.com/yourusername/yava-tanks'
-  }
+  },
+  {
+  id: 'zint',
+  title: 'Zint.lol',
+  year: '2024',
+  description: 'Mon site personnel humoristique et expérimental, qui mélange art web, interactivité, et un brin de chaos créatif.',
+  tech: ['React', 'Vite', 'Tailwind CSS', 'Cloudflare Pages'],
+  coverImage: '/zint/preview.jpg',
+  images: [
+    { src: '/zint/home.jpg', caption: 'Page d’accueil déjantée avec interactions dynamiques' },
+    { src: '/zint/detail.jpg', caption: 'Section expliquant la philosophie de Zint.lol' },
+    { src: '/zint/glitch.jpg', caption: 'Expérimentations visuelles en mode chaos contrôlé' }
+  ],
+  demoLink: 'https://zint.lol',
+  codeLink: 'https://github.com/Zatosee/zint.lol'
+}
   // ...Add more project objects here for all your projects...
 ];
