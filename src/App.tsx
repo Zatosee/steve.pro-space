@@ -1,5 +1,4 @@
 import TickerMenuItem from "./components/TickerMenuItem";
-import StarsBackground from "./components/StarsBackground";
 import { FaInstagram, FaTwitter, FaDiscord } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +7,6 @@ export default function App() {
 
   return (
     <div className="h-screen bg-black flex flex-col items-center gap-0 font-[Space Grotesk] overflow-hidden pt-8 md:pt-12 relative">
-      <StarsBackground />
 
       {/* Logo haut gauche */}
       <div className="absolute top-4 left-6 text-white text-sm md:text-base font-bold tracking-widest uppercase font-[Inter]">

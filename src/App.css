@@ -22,3 +22,15 @@ html, body, #root {
   animation: sway 1s ease-in-out infinite;
   transform-origin: 50px 30px;
 }
+
+
+/* Example: create tiny star dots via radial-gradient and multiple layers */
+body {
+  background-color: #000;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #fff, rgba(255,255,255,0) ),
+    radial-gradient(1.5px 1.5px at 70% 80%, #fff, rgba(255,255,255,0) ),
+    radial-gradient(1px 1px at 50% 60%, #fff, rgba(255,255,255,0) );
+  /* (The above is just illustrative with a few dots; in practice you'd add dozens or use an generator to scatter them) */
+  background-size: cover;
+}
