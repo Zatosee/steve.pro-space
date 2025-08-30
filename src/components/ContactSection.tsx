@@ -1,51 +1,181 @@
-// file: components/ContactSection.tsx
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useId, useRef, useState } from "react";
 
-const ContactSection: React.FC = () => {
+export default function ContactSection({
+  useAOS = false,
+  email = "contact@exemple.com",
+  github = "https://github.com/",
+  linkedin = "https://www.linkedin.com/",
+}: {
+  useAOS?: boolean;
+  email?: string;
+  github?: string;
+  linkedin?: string;
+}) {
+  const nameId = useId();
+  const mailId = useId();
+  const msgId = useId();
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const honeyRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Honeypot anti-bot
+    if (honeyRef.current?.value) return;
+
+    setLoading(true);
+    // 👉 Remplace par ton appel API / email service
+    setTimeout(() => {
+      setLoading(false);
+      setSent(true);
+    }, 600);
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {}
+  };
+
   return (
-    <section id="contact" className="py-16 px-4 bg-gray-900 text-gray-100">
-      <div className="max-w-lg mx-auto text-center">
-        <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
-        <p className="mb-8 text-gray-300">
-          Interested in working together or have any questions? Feel free to reach out to me using the form below or via email.
-        </p>
-        <form action="https://formspree.io/f/your-form-id" method="POST" className="text-left">
-          <label className="block mb-2 text-sm font-medium">Name</label>
-          <input 
-            type="text" name="name" required 
-            className="w-full mb-4 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-gray-100"
-          />
-          <label className="block mb-2 text-sm font-medium">Email</label>
-          <input 
-            type="email" name="email" required 
-            className="w-full mb-4 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-gray-100"
-          />
-          <label className="block mb-2 text-sm font-medium">Message</label>
-          <textarea 
-            name="message" rows={4} required 
-            className="w-full mb-4 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-gray-100"
-          ></textarea>
-          <button 
-            type="submit" 
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded"
-          >
-            Send Message
-          </button>
+    <section id="contact" className="py-20 bg-transparent">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center" {...(useAOS ? { "data-aos": "fade-down" } : {})}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-gray-900 dark:text-white">Contactez-moi</h2>
+          <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+            Une idée de projet ou juste envie d’échanger ? Écrivez-moi 👇
+          </p>
+        </div>
+
+        {/* Bandeau succès */}
+        {sent && (
+          <div className="max-w-xl mx-auto mt-6 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 p-3
+                          dark:border-emerald-900/40 dark:bg-emerald-900/20 dark:text-emerald-200"
+               role="status">
+            Message bien reçu (démo). Branche ton envoi réel côté serveur.
+          </div>
+        )}
+
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-xl mx-auto grid gap-4 mt-8"
+          {...(useAOS ? { "data-aos": "fade-up", "data-aos-delay": "80" } : {})}
+        >
+          {/* Champ piège honeypot (invisible) */}
+          <input ref={honeyRef} type="text" tabIndex={-1} aria-hidden="true" className="hidden" />
+
+          <div>
+            <label htmlFor={nameId} className="sr-only">Votre nom</label>
+            <input
+              id={nameId}
+              name="name"
+              type="text"
+              placeholder="Votre nom"
+              required
+              autoComplete="name"
+              className="w-full p-3 rounded-md border border-gray-200 bg-white/70 text-gray-900
+                         placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 outline-none
+                         dark:border-white/10 dark:bg-white/5 dark:text-gray-100"
+            />
+          </div>
+
+          <div>
+            <label htmlFor={mailId} className="sr-only">Votre email</label>
+            <input
+              id={mailId}
+              name="email"
+              type="email"
+              placeholder="Votre email"
+              required
+              autoComplete="email"
+              className="w-full p-3 rounded-md border border-gray-200 bg-white/70 text-gray-900
+                         placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 outline-none
+                         dark:border.white/10 dark:bg.white/5 dark:text-gray-100"
+            />
+          </div>
+
+          <div>
+            <label htmlFor={msgId} className="sr-only">Votre message</label>
+            <textarea
+              id={msgId}
+              name="message"
+              placeholder="Votre message"
+              rows={4}
+              required
+              className="w-full p-3 rounded-md border border-gray-200 bg-white/70 text-gray-900
+                         placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 outline-none
+                         dark:border-white/10 dark:bg-white/5 dark:text-gray-100"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button
+              type="submit"
+              disabled={loading}
+              className="inline-flex justify-center px-6 py-3 rounded-md bg-indigo-600 hover:bg-indigo-700
+                         text-white font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {loading ? "Envoi..." : "Envoyer"}
+            </button>
+
+            {/* Liens directs */}
+            <a
+              href={`mailto:${email}`}
+              className="inline-flex justify-center px-6 py-3 rounded-md border border-gray-300
+                         text-gray-800 hover:bg-gray-50
+                         dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5"
+            >
+              Écrire par e-mail
+            </a>
+
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="inline-flex justify-center px-6 py-3 rounded-md border border-gray-300
+                         text-gray-800 hover:bg-gray-50
+                         dark:border-white/10 dark:text-gray-200 dark:hover:bg-white/5"
+              aria-label="Copier l’adresse e-mail"
+              title="Copier l’adresse e-mail"
+            >
+              Copier l’e-mail
+            </button>
+          </div>
         </form>
-        {/* Additional contact info */}
-        <p className="mt-8 text-gray-400">
-          Or email me at <a href="mailto:steve@example.com" className="text-blue-400 hover:underline">steve@example.com</a>
-        </p>
-        <p className="mt-1">
-          <a href="https://www.linkedin.com/in/yourprofile" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a> &nbsp;|&nbsp; 
-          <a href="https://github.com/yourusername" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
-            GitHub
+
+        {/* Réseaux */}
+        <div className="mt-10 flex flex-wrap justify-center gap-4"
+             {...(useAOS ? { "data-aos": "zoom-in", "data-aos-delay": "120" } : {})}>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-xl px-4 py-3
+                       bg-white/70 border border-gray-200 shadow-sm
+                       hover:bg-white transition
+                       dark:bg-white/5 dark:border-white/10"
+            aria-label="GitHub"
+          >
+            <FontAwesomeIcon className="text-xl text-gray-900 dark:text-gray-100" icon={faGithub} />
+            <span className="text-sm text-gray-800 dark:text-gray-200 group-hover:underline">GitHub</span>
           </a>
-        </p>
+
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-xl px-4 py-3
+                       bg-white/70 border border-gray-200 shadow-sm
+                       hover:bg-white transition
+                       dark:bg.white/5 dark:border-white/10"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon className="text-xl text-[#0A66C2]" icon={faLinkedin} />
+            <span className="text-sm text-gray-800 dark:text-gray-200 group-hover:underline">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </section>
   );
-};
-
-export default ContactSection;
+}

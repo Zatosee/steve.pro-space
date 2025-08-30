@@ -31,3 +31,13 @@ html, body, #root {
   animation: sway 1s ease-in-out infinite;
   transform-origin: 50px 30px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+            [data-aos] { transition: none !important; animation: none !important; }
+            .animate-\[scrollDown_1\.8s_ease-in-out_infinite\] { animation: none !important; }
+          }
+          @keyframes scrollDown {
+            0% { transform: translateY(-100%); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translateY(200%); opacity: 0; }
+          }

@@ -30,22 +30,6 @@ export const projects: Project[] = [
     codeLink: 'https://github.com/yourusername/tidder-project'  // replace with actual repo URL if available
   },
   {
-    id: 'yava-tanks',
-    title: 'Yava Tanks',
-    year: '2022',
-    description: 'A customizable World of Tanks game made entirely in Java with 100% unit testing coverage.',
-    tech: ['Java', 'JUnit'],
-    coverImage: '/tank/logo.jpg',  // e.g., a logo or main screenshot
-    images: [
-      { src: '/tank/customizable.jpg', caption: 'Fully customizable gameplay – every gamer\'s dream!' },
-      { src: '/tank/uml.jpg', caption: 'Peak OOP design (comprehensive UML diagrams for reference)' },
-      { src: '/tank/platforms.jpg', caption: 'Available on all platforms (download, compile, and run on any machine)' },
-      { src: '/tank/settings.jpg', caption: 'More settings, including adjustable difficulty levels' }
-    ],
-    // No demoLink for this project (game might not be hosted), only codeLink:
-    codeLink: 'https://github.com/yourusername/yava-tanks'
-  },
-  {
   id: 'zint',
   title: 'Zint.lol',
   year: '2024',

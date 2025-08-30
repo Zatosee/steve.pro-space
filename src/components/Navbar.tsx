@@ -1,39 +1,55 @@
-// ✅ Navbar.tsx modifiée pour style angélique/flou
-import { useState } from 'react';
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+/**
+ * Simple responsive navigation bar.  Displays your name on the left and a
+ * hamburger menu on small screens.  Clicking a link will close the menu.
+ */
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { id: "hero", label: "Accueil" },
+    { id: "about", label: "À propos" },
+    { id: "projects", label: "Projets" },
+    { id: "experience", label: "Parcours" },
+    { id: "data", label: "Data" },
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/30 backdrop-blur-md text-gray-900 z-50 shadow-md">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <a href="#hero" className="text-xl font-bold hover:text-sky-700">
-          Steve’s Portfolio
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-black/60 text-white">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <a href="#hero" className="text-2xl font-bold tracking-wide">
+          Steve<span className="text-indigo-400">.Space</span>
         </a>
-        <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="hover:text-sky-700">Projects</a>
-          <a href="#contact" className="hover:text-sky-700">Contact</a>
-        </div>
-        <button 
-          onClick={() => setMenuOpen(!menuOpen)} 
-          className="md:hidden focus:outline-none text-2xl"
-          aria-label="Toggle Menu"
+        <button
+          className="sm:hidden p-2 focus:outline-none"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
         >
-          ☰
+          <FontAwesomeIcon icon={open ? faTimes : faBars} size="lg" />
         </button>
-      </nav>
-      {menuOpen && (
-        <div className="md:hidden bg-white/90 px-4 pb-4 shadow">
-          <a href="#projects" className="block text-gray-800 py-2 hover:text-sky-700" onClick={() => setMenuOpen(false)}>
-            Projects
-          </a>
-          <a href="#contact" className="block text-gray-800 py-2 hover:text-sky-700" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-        </div>
-      )}
-    </header>
+        <ul
+          className={
+            `sm:flex space-x-6 font-medium hidden` +
+            (open ? " absolute top-full left-0 w-full bg-black/80 sm:bg-transparent sm:static sm:block px-4 py-2 flex-col space-y-2 sm:space-y-0 sm:space-x-6" : "")
+          }
+        >
+          {links.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className="block py-2 sm:py-0 hover:text-indigo-400 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
-};
-
-export default Navbar;
+}
