@@ -14,14 +14,13 @@ export default function Navbar() {
     { id: "about", label: "À propos" },
     { id: "projects", label: "Projets" },
     { id: "experience", label: "Parcours" },
-    { id: "data", label: "Data" },
     { id: "contact", label: "Contact" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-black/60 text-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-        <a href="#hero" className="text-2xl font-bold tracking-wide">
+        <a href="/" className="text-2xl font-bold tracking-wide">
           Steve<span className="text-indigo-400">.Space</span>
         </a>
         <button

@@ -5,12 +5,6 @@ import {
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 
-/**
- * Section À propos — 2 colonnes (texte + skills)
- * - AOS sur le titre, le texte et chaque skill
- * - Dark mode et contraste renforcé
- * - Ajout d'un bloc "Stack rapide" (chips) pour ancrer web design + data
- */
 export default function AboutSection() {
   const skills = [
     {

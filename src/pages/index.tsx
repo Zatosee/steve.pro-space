@@ -6,7 +6,6 @@ import 'aos/dist/aos.css';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import DataSection from '../components/DataSection';
-import ContactSection from '../components/ContactSection';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PersonalProjects from '../components/PersonnalProject';
 
