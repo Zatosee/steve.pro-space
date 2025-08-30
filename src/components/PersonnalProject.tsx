@@ -11,9 +11,12 @@ interface Project {
 export default function PersonalProjects({
   useAOS = false,
   projects = [
-    { title: "Portfolio v2 (Next.js)", description: "Refonte avec animations, dark-mode et data-viz.", tags: ["React", "Next.js", "Tailwind"], link: "#" },
-    { title: "Dash KPIs (maquette)", description: "Dashboard SVG: filtres, graphes, export CSV.", tags: ["DataViz", "SVG", "UX"], link: "#" },
-    { title: "CLI Nettoyage CSV", description: "Nettoyage/normalisation de datasets pour analyses.", tags: ["Python", "Pandas"] },
+    { title: "Portfolio (React Typescript)", description: "Refonte de mon ancien portfolio avec petites animations, dark-mode et très simple.", tags: ["React", "Next.js", "Tailwind"]},
+    { title: "Dashbords KPIs (Power bi)", description: "Dashboard, graphes, export en CSV de mes différents tableaux power bi.", tags: ["Figma", "UX"], link: "#" },
+    { title: "Zint.lol", description: "Site d'analyse de statistiques d'un compte league of legends", tags: ["React", "Database", "API"], link: "https://zint.lol/" },
+    { title: "Jeu Point & CLick", description: "Jeu créer durant mes études visant à étudier le principe du point & click", tags: ["Java", "Objet"] },
+    { title: "Jeu Point & CLick", description: "Jeu créer durant mes études visant à étudier le principe du point & click", tags: ["Java", "Objet"] },
+    { title: "Maquette Web", description: "Création d'une large diversité de maquette de site internet afin d'étudier de plus en plus l'ui/ux", tags: ["UI/UX", "Figma"]},
   ],
 }: {
   useAOS?: boolean;
@@ -25,7 +28,7 @@ export default function PersonalProjects({
         <div className="text-center" {...(useAOS ? { "data-aos": "fade-down" } : {})}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-gray-900 dark:text-white">Projets personnels</h2>
           <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-            Sélection d’expérimentations et prototypes de R&amp;D.
+            Petit apperçu de mes projets personnels, mêlant web design et data analyse.
           </p>
         </div>
 

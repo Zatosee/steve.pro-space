@@ -11,21 +11,21 @@ export default function AboutSection() {
       icon: faCode,
       title: "Développement",
       description:
-        "Front-end moderne avec React, TypeScript, performance & accessibilité.",
+        "Front-end moderne avec React, TypeScript, Tailwind, performance & accessibilité.",
       aosDelay: 0,
     },
     {
       icon: faPaintBrush,
       title: "Design",
       description:
-        "UI/UX, design system, micro-interactions et parcours soignés.",
+        "UI/UX, design d’interfaces web responsives et prototypes Figma.",
       aosDelay: 100,
     },
     {
       icon: faChartLine,
       title: "Data",
       description:
-        "Data analyse & visualisation (dashboards, KPIs, itérations data-driven).",
+        "Data analyse & visualisation de données (dashboards, KPIs).",
       aosDelay: 200,
     },
   ];
@@ -35,9 +35,8 @@ export default function AboutSection() {
     "TypeScript",
     "Tailwind",
     "Figma",
-    "Python",
     "SQL",
-    "DataViz",
+    "Power Bi",
   ];
 
   return (
@@ -59,15 +58,14 @@ export default function AboutSection() {
             <p>
               Développeur basé en France, je combine une passion pour le{" "}
               <b>web design</b> et la <b>data analyse</b> pour créer des
-              expériences uniques. Après plusieurs années d’exploration des
-              technos web, j’ai affiné mes compétences pour proposer des
+              expériences uniques. J’ai affiné mes compétences pour proposer des
               solutions performantes, esthétiques et orientées utilisateur.
             </p>
             <p>
               J’aime travailler sur des projets variés — du site vitrine élégant
-              aux tableaux de bord analytiques — et itérer grâce à des{" "}
-              <em>métriques</em> (usage, perf, conversion) afin d’améliorer
-              continuellement l’expérience.
+              aux tableaux de bord analytiques créer par le biais de Power BI. 
+              Toujours curieux, je m’efforce d’apprendre et d’expérimenter de
+              nouvelles technologies.
             </p>
 
             {/* Stack rapide (chips) */}
