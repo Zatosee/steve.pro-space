@@ -28,32 +28,6 @@ export default function DataSection() {
           </p>
         </div>
 
-        {/* KPI light */}
-        <div
-          className="mt-8 grid sm:grid-cols-3 gap-4"
-          data-aos="fade-up"
-          data-aos-delay="80"
-        >
-          <div className="rounded-2xl p-5 bg-white/80 border border-gray-200 shadow-sm dark:bg-white/5 dark:border-white/10">
-            <div className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              Sessions (S-1 → S)
-            </div>
-            <div className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">+18%</div>
-          </div>
-          <div className="rounded-2xl p-5 bg-white/80 border border-gray-200 shadow-sm dark:bg-white/5 dark:border-white/10">
-            <div className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              CTR bouton primaire
-            </div>
-            <div className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">+6.2%</div>
-          </div>
-          <div className="rounded-2xl p-5 bg-white/80 border border-gray-200 shadow-sm dark:bg-white/5 dark:border-white/10">
-            <div className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              Taux de conversion
-            </div>
-            <div className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">+2.1pts</div>
-          </div>
-        </div>
-
         {/* Contenu principal */}
         <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Chart SVG */}

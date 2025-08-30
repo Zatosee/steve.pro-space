@@ -24,6 +24,7 @@ const Portfolio: React.FC = () => {
       <AboutSection />
       <PersonalProjects />
       <ExperienceTimeline />
+      <DataSection /> 
       </main>
     </div>
   );
