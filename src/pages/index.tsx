@@ -1,10 +1,11 @@
-
+// ✅ index.tsx avec fond nuageux + animations AOS
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
+import DataSection from '../components/DataSection';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PersonalProjects from '../components/PersonnalProject';
 
@@ -23,7 +24,8 @@ const Portfolio: React.FC = () => {
       <AboutSection />
       <PersonalProjects />
       <ExperienceTimeline />
-      
+      <DataSection  />
+      <PersonalProjects />
       </main>
     </div>
   );

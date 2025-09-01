@@ -15,7 +15,7 @@ export default function ExperienceTimeline({ useAOS = false }: { useAOS?: boolea
     {
       title: "BUT Informatique (bac+3) – IUT Dijon-Auxerre (antenne Nevers)",
       period: "2021–2024",
-      description: "Parcours informatique avec focus dev web et POO.",
+      description: "Parcours informatique avec focus dev web.",
       icon: faGraduationCap,
     },
     {
@@ -26,14 +26,14 @@ export default function ExperienceTimeline({ useAOS = false }: { useAOS?: boolea
     },
     {
       title: "Stage Data Analyst – SNCF (Technicentre industriel)",
-      period: "2024",
-      description: "Analyse entrées/sorties trains, création de KPI et supports de réunions.",
+      period: "Fin 2024",
+      description: "Analyse entrées/sorties trains, création de KPI et supports servant aux réunions.",
       icon: faTrain,
     },
     {
       title: "Projets personnels (R&D)",
-      period: "2024–Présent",
-      description: "Projets perso (portfolio, data-viz, outils). Pratique continue + veille.",
+      period: "Fin 2024–Présent",
+      description: "Projets perso (portfolio, power bi, outils).",
       icon: faFlask,
     },
   ];
@@ -46,7 +46,7 @@ export default function ExperienceTimeline({ useAOS = false }: { useAOS?: boolea
             Mon parcours
           </h2>
           <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-            Études, projets appliqués et R&amp;D personnelle orientée produit.
+            Études, projets appliqués et travaux personnels.
           </p>
         </div>
 
