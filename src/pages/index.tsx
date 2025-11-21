@@ -8,6 +8,7 @@ import AboutSection from '../components/AboutSection';
 import DataSection from '../components/DataSection';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import PersonalProjects from '../components/PersonnalProject';
+import Contact from '../components/ContactSection';
 
 const Portfolio: React.FC = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Portfolio: React.FC = () => {
       <PersonalProjects />
       <ExperienceTimeline />
       <DataSection  />
-      <PersonalProjects />
+      <Contact/>
       </main>
     </div>
   );
