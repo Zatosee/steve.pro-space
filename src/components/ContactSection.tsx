@@ -51,8 +51,8 @@ export default function ContactSection() {
             Contact
           </h2>
           <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-            Un projet, une question ou juste envie de say hi&nbsp;?  
-            Envoie-moi un message, je reviens vers toi asap.
+            Un projet, une question ou juste envie de dire bonjour&nbsp;?  
+            Envoie-moi un message, histoire de voir si je peux transformer certaines de tes idées en réalité.
           </p>
         </div>
 
@@ -91,8 +91,8 @@ export default function ContactSection() {
                   Types de demandes
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Projets, collabs, questions techniques, feedbacks…  
-                  Si tu hésites, send it anyway, i guess.
+                  Projets, questions, feedbacks…  
+                  Si tu hésites, Envoie quand même.
                 </p>
               </div>
             </div>
@@ -107,11 +107,11 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Humain first
+                  Pas de bot ou d'IA
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Pas de bot auto-répondeur ici&nbsp;: chaque message est lu et
-                  traité avec un vrai cerveau.
+                  Pas réponse automatique ici&nbsp;: chaque message est lu et
+                  traité par un vrai cerveau.
                 </p>
               </div>
             </div>
